@@ -10,7 +10,7 @@ export default class Header extends Component {
         <nav className="navbar" role="navigation" aria-label="main navigation">
           <div className="navbar-brand">
             <NavLink className="navbar-item" to="/">
-              Conduit
+              <h4>JWT Authentication</h4>
             </NavLink>
           </div>
           <div id="navbarBasicExample" className="navbar-menu">
