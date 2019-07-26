@@ -8,7 +8,7 @@ export default class Public extends Component {
   render() {
     return (
       <Switch>
-        <Route path="/signup" exact component={Signup} />
+        <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
         <Route component={FourNotFour} />
       </Switch>
