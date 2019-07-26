@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Header from './components/Header';
-import UserContext from './components/context/userContext';
+import UserContext from './context/userContext';
 import Protected from './components/Protected';
 import Public from './components/Public';
 import Loading from './components/Spinner';

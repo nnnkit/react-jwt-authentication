@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import UserContext from './context/userContext';
+import UserContext from '../context/userContext';
 
 export default class Header extends Component {
   static contextType = UserContext;
@@ -20,6 +20,7 @@ export default class Header extends Component {
                   <div className="buttons">
                     <NavLink
                       to="/"
+                      exact
                       className="button"
                       activeClassName="is-primary"
                     >
