@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Signup from './Signup';
 import Login from './Login';
+import FourNotFour from './404/404';
 
 export default class Public extends Component {
   render() {
     return (
-      <div>
+      <Switch>
         <Route path="/signup" exact component={Signup} />
         <Route path="/login" component={Login} />
-        <Route render={() => <h1>Page Not Found</h1>} />
-      </div>
+        <Route component={FourNotFour} />
+      </Switch>
     );
   }
 }
