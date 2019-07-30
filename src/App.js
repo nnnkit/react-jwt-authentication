@@ -1,9 +1,12 @@
-import React, {Component} from 'react';
+import React, {Component, lazy, Suspense} from 'react';
 import Header from './components/Header';
 import UserContext from './context/userContext';
-import Protected from './components/Protected';
-import Public from './components/Public';
 import Loading from './components/Spinner';
+// import Public from './components/Public';
+// import Protected from './components/Protected';
+
+const Protected = lazy(() => import('./components/Protected'));
+const Public = lazy(() => import('./components/Public'));
 class App extends Component {
   state = {
     user: null,
@@ -35,7 +38,9 @@ class App extends Component {
         ) : (
           <div>
             <Header />
-            {this.state.user ? <Protected /> : <Public />}
+            <Suspense fallback={<Loading />}>
+              {this.state.user ? <Protected /> : <Public />}
+            </Suspense>
           </div>
         )}
       </UserContext.Provider>
